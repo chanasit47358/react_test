@@ -21,7 +21,6 @@ function Sidemenu({Transitionwindow}) {
             return;
         }
         setMenu(status)
-        // console.log(typeof(Transitionwindow))
         Transitionwindow(status);
 
     };

@@ -10,16 +10,16 @@ import { CardActions, CardContent, SvgIcon, TextField } from '@material-ui/core'
 import MenuItem from '@material-ui/core/MenuItem';
 import clsx from 'clsx';
 import PropTypes from "prop-types";
-function Content(window) {
+function Content({ window }) {
     const drawerWidth = 240;
-    console.log(window);
+    console.log(typeof (window));
     const useStyles = makeStyles((theme) => ({
         root: {
             display: "flex",
             flexDirection: "column",
-            width: "100vw",
+            width: "110vw",
             height: "100vh",
-            marginLeft: "10%",
+            marginLeft: "2.5%",
             [theme.breakpoints.down("600")]: {
                 width: "100vw",
                 height: "120vh",
@@ -59,8 +59,8 @@ function Content(window) {
                 duration: theme.transitions.duration.enteringScreen,
             }),
             marginLeft: +drawerWidth,
-            [theme.breakpoints.down("600")]: {
-                margin: "5% 5% 0% 10%",
+            [theme.breakpoints.up("600")]: {
+                marginLeft: +drawerWidth,
             },
         },
         image: {
@@ -160,6 +160,26 @@ function Content(window) {
         b2: {
             background: 'gray',
             color: 'white',
+        },
+        row2: {
+            display: 'flex',
+            marginLeft: "4%",
+            [theme.breakpoints.down("600")]: {
+                marginLeft: "1%",
+            },
+        },
+        rowmr: {
+            display: 'flex',
+            marginLeft: "5%",
+            [theme.breakpoints.down("600")]: {
+                marginLeft: "1%",
+            },
+        },
+        icon1: {
+            marginTop: "2.5%",
+            [theme.breakpoints.down("600")]: {
+                marginRight: "1%",
+            },
         }
     }));
     const classes = useStyles();
@@ -198,7 +218,7 @@ function Content(window) {
                                     <Avatar alt="Keng Shortgun" src="/picture/1.jpg" className={classes.image} />
                                     <Button variant="outlined" className={classes.button}>
                                         Upload Image
-                                                </Button>
+                                    </Button>
                                 </Grid>
                             </div>
                         </Grid>
@@ -207,14 +227,14 @@ function Content(window) {
                                 <Grid container spacing={2}>
                                     <Grid item xs={12}>
                                         <div style={{ display: 'flex' }}>
-                                            <SvgIcon className={classes.icon}>
+                                            <SvgIcon className={classes.icon1}>
                                                 <path d="M2,3H22C23.05,3 24,3.95 24,5V19C24,20.05 23.05,21 22,21H2C0.95,21 0,20.05 0,19V5C0,3.95 0.95,3 2,3M14,6V7H22V6H14M14,8V9H21.5L22,9V8H14M14,10V11H21V10H14M8,13.91C6,13.91 2,15 2,17V18H14V17C14,15 10,13.91 8,13.91M8,6A3,3 0 0,0 5,9A3,3 0 0,0 8,12A3,3 0 0,0 11,9A3,3 0 0,0 8,6Z" />
                                             </SvgIcon>
                                             <TextField id="outlined-basic" label="Id card" variant="outlined" className={classes.id} size="small" />
                                         </div>
                                     </Grid>
                                     <Grid item xs={12} sm={3}>
-                                        <div style={{ display: 'flex' }}>
+                                        <div className={classes.rowmr}>
                                             <SvgIcon className={classes.icon} className={classes.iconmr}>
                                                 <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
                                             </SvgIcon>
@@ -245,7 +265,7 @@ function Content(window) {
                                         </div>
                                     </Grid>
                                     <Grid item xs={12} sm={4}>
-                                        <div style={{ display: 'flex' }}>
+                                        <div className={classes.row2}>
                                             <SvgIcon className={classes.icon} className={classes.icongen}>
                                                 <path d="M17.58,4H14V2H21V9H19V5.41L15.17,9.24C15.69,10.03 16,11 16,12C16,14.42 14.28,16.44 12,16.9V19H14V21H12V23H10V21H8V19H10V16.9C7.72,16.44 6,14.42 6,12A5,5 0 0,1 11,7C12,7 12.96,7.3 13.75,7.83L17.58,4M11,9A3,3 0 0,0 8,12A3,3 0 0,0 11,15A3,3 0 0,0 14,12A3,3 0 0,0 11,9Z" />
                                             </SvgIcon>

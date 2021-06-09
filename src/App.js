@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Taskbar from './main/component/navbar/taskbar.js'
+import Content from './main/component/content/Content.js'
+import { useState } from 'react';
 function App() {
+  let [window,setWindow] = useState(false)
+  function Transitionwindow(menu){
+    setWindow(menu);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div >
+      <header>
+        <Taskbar Transitionwindow={Transitionwindow}/>
       </header>
+      <Content window={window}/>
     </div>
   );
 }

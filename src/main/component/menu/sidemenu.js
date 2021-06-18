@@ -27,15 +27,17 @@ function Sidemenu({Transitionwindow}) {
     const useStyles = makeStyles((theme) => ({
         root: {
             display: 'flex',
+            background:"white",
         },
-        appBar: {
-            zIndex: theme.zIndex.drawer + 1,
-        },
+        paper: {
+            background: "blue"
+          },
         drawer: {
             width: drawerWidth,
             flexShrink: 0,
             margin: '5%',
             width: '10%',
+            zindex: -1,
         },
         drawerPaper: {
             width: drawerWidth,
@@ -57,7 +59,6 @@ function Sidemenu({Transitionwindow}) {
         xx: {
             marginTop: '10%',
         },
-
     }));
     const classes = useStyles();
     function changeBackground(e) {
@@ -71,7 +72,7 @@ function Sidemenu({Transitionwindow}) {
             <Button onClick={toggleDrawer(true)}>
                 <MenuIcon style={{ color: 'white' }} />
             </Button>
-            <Drawer open={menu} onClose={toggleDrawer(false)} className={classes.drawer} variant='tempolary'>
+            <Drawer open={menu} onClose={toggleDrawer(false)} className={classes.drawer} variant='temporary' BackdropProps={{ invisible: true }}>
                 <List >
                     <Toolbar />
                     <ListItem key="profile" className={classes.list} onMouseOver={changeBackground}

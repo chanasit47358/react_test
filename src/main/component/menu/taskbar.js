@@ -18,11 +18,15 @@ function Taskbar({Transitionwindow}){
         },
         menu:{
             background:'orange',
-            zIndex:1301
+            zIndex:1301,
+            height:"10%",
+            [theme.breakpoints.down("600")]: {
+              height:"8%",
+            },
         },
         logo: {
           maxWidth: 40,
-          marginLeft: "43%",
+          marginLeft: "45%",
           [theme.breakpoints.down("600")]: {
             marginLeft: "35%",
           },

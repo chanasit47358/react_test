@@ -1,6 +1,7 @@
-import Taskbar from './main/component/navbar/taskbar.js'
+import Taskbar from './main/component/menu/taskbar.js'
 import Content from './main/component/content/Content.js'
 import { useState } from 'react';
+import './App.css';
 function App() {
   let [window,setWindow] = useState(false)
   function Transitionwindow(menu){
